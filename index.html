@@ -6,10 +6,21 @@
     <title>Фортшторм: Королевская битва</title>
     <!-- Значок вкладки: молния на воронке шторма (рисует promo.html, src/promo/main.ts: favicon) -->
     <link rel="icon" type="image/png" href="./favicon.png" />
-    <script type="module" crossorigin src="./assets/index-DZrvuPUI.js"></script>
+    <script type="module" crossorigin src="./assets/index-Di00-KDx.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-CJ8n0f80.css">
+    <style>
+      #boot { position: fixed; inset: 0; z-index: 20; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3vmin; background: radial-gradient(ellipse at 50% 38%, #24409e, #0b1630 68%); transition: opacity 0.35s; }
+      #boot img { width: 18vmin; height: 18vmin; }
+      #boot b { font: italic 900 12vmin/1 Fortstorm, Impact, 'Arial Narrow', sans-serif; letter-spacing: 0.01em; color: #ffd23c; text-shadow: 0 0.05em 0 #9a5a00, 0 0.12em 0.25em rgba(0, 0, 0, 0.55); }
+      #boot span { display: block; width: 46vmin; height: 1.8vmin; border-radius: 1vmin; background: rgba(255, 255, 255, 0.15); overflow: hidden; }
+      #boot i { display: block; width: 5%; height: 100%; border-radius: 1vmin; background: linear-gradient(#ffe95a, #ffc928); transition: width 0.25s; animation: boot-creep 9s cubic-bezier(0.15, 0.7, 0.3, 1) forwards; }
+      @keyframes boot-creep { to { width: 35%; } }
+      #boot.done { opacity: 0; pointer-events: none; }
+    </style>
   </head>
   <body>
+    <div id="boot"><img src="./favicon.png" alt="" /><b>FORTSTORM</b><span><i></i></span></div>
+    <script>/^(ru|be|uk|kk)/i.test(navigator.language) && (document.querySelector('#boot b').textContent = 'ФОРТШТОРМ');</script>
     <canvas id="game"></canvas>
     <div id="ui"></div>
   </body>
